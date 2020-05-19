@@ -1,5 +1,5 @@
 # Command
-El patron Command encapsula una peticion como un objeto, lo que permite parametrizar  objetos con diferentes solicitudes, colas de solicitudes o de registro, y admitir operaciones que no se pueden deshacer. Es muy utilizado en situaciones que requieren hacer ejecuciones sin conocer realmente lo que hacen.
+El patrón Command encapsula una petición como un objeto, lo que permite parametrizar  objetos con diferentes solicitudes, colas de solicitudes o de registro, y admitir operaciones que no se pueden deshacer. Es muy utilizado en situaciones que requieren hacer ejecuciones sin conocer realmente lo que hacen.
 
 ![CommandUML](Command.png)
 
@@ -10,7 +10,7 @@ El patron Command encapsula una peticion como un objeto, lo que permite parametr
 - Cliente: Establece la configuración del Comando Concreto y el Receptorr.
 
 ## Ejemplo
-Supongamos que nos encargaron la automatizacion de ciertas en una fabrica que son realizadas por los operarios todos los dias. Si bien estas tareas deben ser realizadas automaticamente, un operario tiene que activarla debido a que el operario primero necesita comprobar el estado de la planta, si el operario da el ok, las tareas pueden ser llevadas a cabo tan solo presionando un boton en el tablero de control. Una de las tareas que se realizan en la fabrica es la de encender encender cintas transportadoras las cuales, para encenderse, necesitan seguir una serie de pasos: 1) Precalentar el motor de la cinta, 2) Encender el motor y 3) Iniciar el movimiento de la cinta. Para solucionar este problema utilizando el patron de diseño Command, deberemos implementar lo siguiente:
+Supongamos que nos encargaron la automatización de ciertas en una fábrica que son realizadas por los operarios todos los dias. Si bien estas tareas deben ser realizadas automáticamente, un operario tiene que activarla debido a que el operario primero necesita comprobar el estado de la planta, si el operario da el ok, las tareas pueden ser llevadas a cabo tan solo presionando un botón en el tablero de control. Una de las tareas que se realizan en la fábrica es la de encender encender cintas transportadoras las cuales, para encenderse, necesitan seguir una serie de pasos: 1) Precalentar el motor de la cinta, 2) Encender el motor y 3) Iniciar el movimiento de la cinta. Para solucionar este problema utilizando el patrón de diseño Command, deberemos implementar lo siguiente:
 
 ![CintaUML](Cinta.png)
 
@@ -31,7 +31,7 @@ Implementara las funcionalidades especificas para mover una cinta transportadora
     }
 ```
 ##### ComandoConcreto
-Aqui definiremos que hacer para encender la cinta transportadora
+Aquí definiremos que hacer para encender la cinta transportadora
 
 ```java
     public class EncenderCintaTransportadora implements command{
@@ -63,16 +63,17 @@ Aqui definiremos que hacer para encender la cinta transportadora
 ```
 
 #### Client
-De esta manera, el operario solo debera el operario solo debera acceder al tablero de control y presionar el boton para encender la cinta transportadora:
+De esta manera, el operario solo deberá acceder al tablero de control y presionar el botón para encender la cinta transportadora:
 
 ```java
-    public static void main(String[]args){
-        TableroControl tablero = new TableroControl(); //invoker
-        CintaTransportadora cinta = new CintaTransportadora(); //creo un objeto de una de las cintas transportadoras
-        EncenderCintaTransportadora encender = new EncenderCintaTransportadora(cinta);
-        tablero.setComando(encender);
-        tablero.ejecutar(); //enciendo la cinta transportadora;
-        
-    }
+   public class operario{
+      public static void main(String[]args){
+           TableroControl tablero = new TableroControl(); //invoker
+           CintaTransportadora cinta = new CintaTransportadora(); //creo un objeto de una de las cintas transportadoras
+           EncenderCintaTransportadora encender = new EncenderCintaTransportadora(cinta);
+           tablero.setComando(encender);
+           tablero.ejecutar(); //enciendo la cinta transportadora;
+       }
+   } 
 ```
 
