@@ -61,7 +61,7 @@ public abstract class Spawn{
     }
 ```
 
-##### Cases que implementan un producto concreto
+##### Clases de un producto concreto
 ```java
     public class EnemigoNormal implements Enemigo{
         private int vida;
