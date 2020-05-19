@@ -1,5 +1,5 @@
 # Command
-El patrón Command encapsula una petición como un objeto, lo que permite parametrizar  objetos con diferentes solicitudes, colas de solicitudes o de registro, y admitir operaciones que no se pueden deshacer. Es muy utilizado en situaciones que requieren hacer ejecuciones sin conocer realmente lo que hacen.
+El patrón Command encapsula una petición como un objeto, con lo que se facilita la parametrización de los métodos. Es muy utilizado en situaciones que requieren hacer ejecuciones sin conocer realmente lo que hacen.
 
 ![CommandUML](Command.png)
 
