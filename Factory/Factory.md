@@ -25,18 +25,18 @@ public abstract class Spawn{
 
 ##### Subclases factory
 ```java
-public class SpawnNormal{
-    private int spawnVida;
-    public SpawnNormal(){
-        this.spawnVida = 5;
+    public class SpawnNormal{
+        private int spawnVida;
+        public SpawnNormal(){
+            this.spawnVida = 5;
+        }
+        public Enemigo spawnEnemy(){
+            return new EnemigoNormal()
+        }
+        public void aumentarVida(){
+            this.vida += 2;
+        }
     }
-    public Enemigo spawnEnemy(){
-        return new EnemigoNormal()
-    }
-    public void aumentarVida(){
-        this.vida += 2;
-    }
-}
 ```
 ```java
     public class SpawnJefe{
@@ -74,6 +74,26 @@ public class SpawnNormal{
         private int vida;
         public Jefe(int vida){
             this.vida = vida
+        }
+    }
+```
+
+Que sucede si ahora queremos que se creen enemigos normales, pero con mayor cantidad de vida pero que esto ocurra cada x tiempo para crear enemigos que sean un poco mas dificiles que los normales?
+Para esto podriamos simplemente aumentar la vida con la que aparecen con la funcion aumentarVida()... NO!!, esto haria que TODOS los enemigos aparecieran con esa nueva vida. La solucion correcta seria agregar una nueba subclase factory que implementara el enemigo normal pero con mayor cantidad de vida.
+
+![Enemy2](Enemigos2.png)
+
+```java
+    public class SpawnNormalMejorado{
+        private int spawnVida;
+        public SpawnNormal(){
+            this.spawnVida = 8;
+        }
+        public Enemigo spawnEnemy(){
+            return new EnemigoNormal()
+        }
+        public void aumentarVida(){
+            this.vida += 2;
         }
     }
 ```
