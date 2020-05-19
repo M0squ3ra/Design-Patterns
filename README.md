@@ -15,3 +15,6 @@ Nos describen como utilizar estructuras de datos complejas a partir de elementos
 
 ### Patrones comportamentales
 El fin de este tipo de patrones es gestionar algoritmos, relaciones y responsabilidades entre objetos.
+
+[Command]:https://github.com/M0squ3ra/Design-Patterns/blob/master/Command/Command.md
+- [Command]
