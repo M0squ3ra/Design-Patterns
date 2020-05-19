@@ -29,10 +29,7 @@ Debido a la evolución de la industria automovilística, empiezan a aparecer los
         public void encendidoElectrico(){...} //peticion especifica
     }
 ```
-Como podemos ver, no podemos encender el auto eléctrico de la misma manera que los autos a combustión, por lo tanto tenemos que crear algo (__Adapter__) que permita al programa de automanejo interactuar con el auto eléctrico. Este es el adapter:
-
-![AutoUML](Auto.png)
-
+Como podemos ver, no podemos encender el auto eléctrico de la misma manera que los autos a combustión, por lo tanto tenemos que crear algo (__Adapter__) que permita al programa de automanejo interactuar con el auto eléctrico. Este es el adapter.
 La implementación en java para el adapter quedaria asi:
 
 ##### Clase Adapter:
@@ -48,4 +45,6 @@ La implementación en java para el adapter quedaria asi:
     }
 ```
 De esta manera, nuestro programa queda adaptado para usar autos eléctricos.
+
+![AutoUML](Auto.png)
 
