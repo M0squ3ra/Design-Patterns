@@ -1,18 +1,19 @@
 # Factory
 
-El patron de diseño Factory (Fabrica) define una interface para crear un objeto, pero delega la resoponsabilidad de instanciarlos a cada una de las subclases. El metodo abstracto fabrica es el que permite delegar dicha responsabilidad las subclases.
+El patrón de diseño Factory (Fabrica) define una interfaz para crear un objeto, pero delega la responsabilidad de instanciarse a cada una de las subclases. El método abstracto fábrica es el que permite delegar dicha responsabilidad las subclases.
 
 ![FactoryUML](Factory.png)
 
-Todos los productos deben implementar la misma interfaz, para asi cada clase que utiliza los productos pueda referenciar a la interfaz y no a una clase especifica.
+Todos los productos deben implementar la misma interfaz, para así cada clase que utiliza los productos pueda referenciar a la interfaz y no a una clase específica.
 
 ## Ejemplo
 Supongamos que queremos crear un juego en el que tenemos 2 clases de enemigos: los enemigos normales, que aparecen durante todo el juego, y los jefes, que solo aparecen en momentos concretos del juego. Ambos tipos enemigos a medida que avanza el juego, empiezan a aparecer con una mayor cantidad de vida.
-Para implementarlo con el patron de diseño Factory, lo hariamos de la siguiente manera:
+Para implementarlo con el patrón de diseño Factory, lo haríamos de la siguiente manera:
+
 
 ![EnemyUML](Enemigos.png)
 
-La implementacion en java quedaria asi:
+La implementación en java quedaria asi:
 
 ##### Clase abstracta factory:
 ```java
@@ -78,8 +79,8 @@ public abstract class Spawn{
     }
 ```
 
-Que sucede si ahora queremos que se creen enemigos normales, pero con mayor cantidad de vida pero que esto ocurra cada x tiempo para crear enemigos que sean un poco mas dificiles que los normales?
-Para esto podriamos simplemente aumentar la vida con la que aparecen con la funcion aumentarVida()... NO!!, esto haria que TODOS los enemigos aparecieran con esa nueva vida. La solucion correcta seria agregar una nueba subclase factory que implementara el enemigo normal pero con mayor cantidad de vida.
+Qué sucede si ahora queremos que se creen enemigos normales, pero con mayor cantidad de vida pero que esto ocurra cada x tiempo para crear enemigos que sean un poco más difíciles que los normales?
+Para esto podríamos simplemente aumentar la vida con la que aparecen con la función aumentarVida()... NO!!, esto haría que TODOS los enemigos aparecieran con esa nueva vida. La solución correcta sería agregar una nueva subclase factory que implemente el enemigo normal pero con mayor cantidad de vida.
 
 ![Enemy2](Enemigos2.png)
 
@@ -98,4 +99,4 @@ Para esto podriamos simplemente aumentar la vida con la que aparecen con la func
     }
 ```
 
-En este patron de diseño podes crear tanta cantidad de fabricas con la cantidad y/o combinacion de productos como quieras.
+En este patrón de diseño puedes crear tanta cantidad de fábricas con la cantidad y/o combinación de productos como quieras.
