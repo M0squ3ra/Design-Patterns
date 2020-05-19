@@ -97,3 +97,5 @@ Para esto podriamos simplemente aumentar la vida con la que aparecen con la func
         }
     }
 ```
+
+En este patron de diseño podes crear tanta cantidad de fabricas con la cantidad y/o combinacion de productos como quieras.
