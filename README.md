@@ -9,6 +9,7 @@ Estos patrones se utilizan cuando debemos crear objetos pero debemos tomar decis
 
 ### Patrones estructurales
 Nos describen como utilizar estructuras de datos complejas a partir de elementos más simples.
+
 [Adapter]:https://github.com/M0squ3ra/Design-Patterns/blob/master/Adapter/Adapter.md
 - [Adapter]
 
