@@ -26,7 +26,7 @@ y uno de los tipos de autos es:
 Debido a la evolución de la industria automovilística, empiezan a aparecer los autos eléctricos, por lo que queremos utilizar nuestro programa para que los autos eléctricos también puedan ser manejados. Cuando conseguimos uno de estos autos, nos damos cuenta de que ya tiene una interfaz que permite interactuar con el auto desde una computadora, por lo que si utilizamos dicha interfaz, no tendremos que programarla desde cero como hicimos con los autos a combustión. La interfaz (no es una interfaz como tal, sino una clase que permite la interaccion) en cuestión es:
 ```java
     public class AutoElectrico{
-        public void encendidoElectrico(); //peticion especifica
+        public void encendidoElectrico(){...} //peticion especifica
     }
 ```
 Como podemos ver, no podemos encender el auto eléctrico de la misma manera que los autos a combustión, por lo tanto tenemos que crear algo (__Adapter__) que permita al programa de automanejo interactuar con el auto eléctrico. Este es el adapter:
