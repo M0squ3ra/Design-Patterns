@@ -1,6 +1,7 @@
 # Patrones de Diseño
 ![Logo](logo4.png)
-Patrones de diseño con ejemplos. Este repositorio surge a partir de un reto personal que tiene como fin aprender patrones de diseño.
+
+  Patrones de diseño con ejemplos. Este repositorio surge a partir de un reto personal que tiene como fin aprender patrones de diseño.
 
 ### Patrones Creacionales
 Estos patrones se utilizan cuando debemos crear objetos pero debemos tomar decisiones dinámicamente en el proceso de creación.
