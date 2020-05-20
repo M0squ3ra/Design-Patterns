@@ -1,5 +1,5 @@
 # Patrones de Diseño
-![Logo](logo.png)
+![Logo](logo4.png)
 Patrones de diseño con ejemplos. Este repositorio surge a partir de un reto personal que tiene como fin aprender patrones de diseño.
 
 ### Patrones Creacionales
