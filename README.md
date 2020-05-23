@@ -9,6 +9,9 @@ Estos patrones se utilizan cuando debemos crear objetos pero debemos tomar decis
 [Factory]:https://github.com/M0squ3ra/Design-Patterns/blob/master/Factory
 - [Factory]
 
+[Singleton]:https://github.com/M0squ3ra/Design-Patterns/tree/master/Singleton
+- [Singleton]
+
 ### Patrones estructurales
 Nos describen como utilizar estructuras de datos complejas a partir de elementos más simples.
 
