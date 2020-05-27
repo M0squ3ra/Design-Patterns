@@ -1,5 +1,5 @@
 # Facade
-El patrón Facade provee una interfaz unificada a un conjunto de interfaces en un subsistema. Facade define una interfaz de alto nivel para hacer que el subsistema sea más fácil de usar.
+El patrón Facade (fachada) provee una interfaz unificada a un conjunto de interfaces en un subsistema. Facade define una interfaz de alto nivel para hacer que el subsistema sea más fácil de usar.
 
 ![FacadeUML](Facade.png)
 
@@ -66,6 +66,9 @@ Si quiero realizar las actividades 1) y 2), debería tener un main similar a est
 ```
 Esto puede resultar un poco complejo para tan solo poder realizar dos actividades. Aca es donde entra el patrón Facade, que nos permitirá simplificar las tareas necesarias para llevar a cabo las actividades abstrayendo las sub tareas.
 ![RedUML](Red.png)
+
+Para utilizarlo, debemos implementar una fachada que nos permita abstraer los sub sistemas:
+#### Facade
 ```java
     public class Facade{
         public Facade(){...}
