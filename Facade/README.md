@@ -1,13 +1,14 @@
 # Facade
-El patron Facade provee una interfaz unificada a un conjunto de interfaces en un sibsistema. Facade define una interfaz de alto nivel para hacer que el subsistema sea mas facil de usar.
+El patrón Facade provee una interfaz unificada a un conjunto de interfaces en un subsistema. Facade define una interfaz de alto nivel para hacer que el subsistema sea más fácil de usar.
 
 ![FacadeUML](Facade.png)
 
 ## Ejemplo
-Supongamos que nos piden desarrollar una red social en la cual, entre otras actividades, podemos: 1) Realizar una publicacion y 2) Visitar perfil de un usuario. 
-Para realizar una publicacion, se deben realizar los siguientes pasos: Crear la propia publicacion, validar la publicacion y añadirla al perfil del usuario.
+Supongamos que nos piden desarrollar una red social en la cual, entre otras actividades, podemos: 1) Realizar una publicación y 2) Visitar perfil de un usuario.
+Para realizar una publicación, se deben realizar los siguientes pasos: Crear la propia publicación, validar la publicación y añadirla al perfil del usuario.
 Para visitar el perfil de un usuario, se debe primero consultar el perfil de este y luego mostrar todas las publicaciones.
-El codigo en java podria ser el siguiente:
+El código en java podría ser el siguiente:
+
 #### Publicacion
 ```java
     public class Publicacion{
@@ -39,7 +40,7 @@ El codigo en java podria ser el siguiente:
         public Perfil getPerfil(){...}
     }
 ```
-Si quiero realizar las actividades 1) y 2), deberia tener un main similar a este:
+Si quiero realizar las actividades 1) y 2), debería tener un main similar a este:
 ```java
     public class Main(){
         public static void main(String[] args){
@@ -63,7 +64,7 @@ Si quiero realizar las actividades 1) y 2), deberia tener un main similar a este
         }
     }
 ```
-Esto puede resultar un poco complejo para tan solo poder realizar dos actividades. Aca es donde entra el patron Facade, que nos permitira simplificar las tareas necesarias para llevar a cabo las actividades abstrayendo las sub tareas.
+Esto puede resultar un poco complejo para tan solo poder realizar dos actividades. Aca es donde entra el patrón Facade, que nos permitirá simplificar las tareas necesarias para llevar a cabo las actividades abstrayendo las sub tareas.
 ![RedUML](Red.png)
 ```java
     public class Facade{
@@ -85,7 +86,7 @@ Esto puede resultar un poco complejo para tan solo poder realizar dos actividade
         }
     }
 ```
-De esta manera, para realizar las actividades bastaria con:
+De esta manera, para realizar las actividades bastaría con:
 ```java
     public class Main{
         public static void main(String[] args){
