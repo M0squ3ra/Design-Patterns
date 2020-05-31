@@ -1,16 +1,19 @@
 # Composite
-El patron Composite (Compuesto) te permite componer objetos en estructuras tipo arbol para representar jerarquias de parte completa. Composite le permite a los clientes tratar objetos y composiciones de objetos de una manera uniforme.
+El patrón Composite (Compuesto) te permite componer objetos en estructuras tipo árbol para representar jerarquías de parte completa. Composite le permite a los clientes tratar objetos y composiciones de objetos de una manera uniforme.
 
 ![CompositeUML](Composite.png)
 
-- Component: Declara la interfaz común. También declara operaciones para acceder a los hijos (opcional) Define una interfaz para acceder al padre. Implementa el comportamiento predeterminado que es común a todas las clases.
-- Leaf:  
+- Component: Declara la interfaz común. También declara operaciones para acceder a los hijos (no es obligatorio). Implementa el comportamiento predeterminado que es común a todas las clases.
+- Leaf: representa el componente mínimo del arbol, implementa la operación a realizar.
 - Composite: Almacena sus componentes hijos e implementa las operaciones relacionadas con los hijos.
 - Client: Manipula los objetos de la composición a través de la interfaz de Component.
 
 
+
 ## Ejemplo
-Supongamos que tenemos un sistema de archivos (FS), en el cual tenemos archivos simples (txt,exe,etc) y carpetas. El FS (File Sistem) puede tener archivos y directorios, y a su vez, este ultimo puede tener otros archivos y directorios. Utilizando el patron Composite, el problema nos quedaria planteado de la siguiente manera:
+
+Supongamos que tenemos un sistema de archivos (FS), en el cual tenemos archivos simples (txt,exe,etc) y carpetas. El FS (File System) puede tener archivos y directorios, y a su vez, este último puede tener otros archivos y directorios. Utilizando el patrón Composite, el problema nos quedaría planteado de la siguiente manera:
+
 ![FSUML](FS.png)
 
 #### Component
@@ -76,5 +79,4 @@ public class Client{
     }
 }
 ```
-De esta manera podemos tener la candidad de archivos y subcarpetas que queramos y obtener el tamanio de un archivo en particular o de todos los archivos contenidos en un directorio y sub directorios.
-
+De esta manera podemos tener la cantidad de archivos y subcarpetas que queramos y obtener el tamaño de un archivo en particular o de todos los archivos contenidos en un directorio y subdirectorios.
