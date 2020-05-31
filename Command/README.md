@@ -16,64 +16,64 @@ Supongamos que nos encargaron la automatización de ciertas en una fábrica que 
 
 ##### Comando
 ```java
-   public interface Comando{
-       public void ejecutar();
-   }
+public interface Comando{
+    public void ejecutar();
+}
 ```
 ##### Receptor
 Implementara las funcionalidades especificas para mover una cinta transportadora
 ```java
-    public class CintaTransportadora{
-        //Acciones
-        public void precalentar(){...}
-        public void encenderMotor(){...}
-        public void moverCinta(){...}
-    }
+public class CintaTransportadora{
+    //Acciones
+    public void precalentar(){...}
+    public void encenderMotor(){...}
+    public void moverCinta(){...}
+}
 ```
 ##### ComandoConcreto
 Aquí definiremos que hacer para encender la cinta transportadora
 
 ```java
-    public class EncenderCintaTransportadora implements command{
-        private CintaTransportadora cinta;
-        public EncenderCintaTransportadora(CintaTransportadora cinta){
-            this.cinta = cinta //se le pasa una cinta especifica
-        }
-        public void ejecutar(){
-            cinta.precalentar();
-            cinta.encenderMotor();
-            cinta.moverCinta();
-        }
+public class EncenderCintaTransportadora implements command{
+    private CintaTransportadora cinta;
+    public EncenderCintaTransportadora(CintaTransportadora cinta){
+        this.cinta = cinta //se le pasa una cinta especifica
     }
+    public void ejecutar(){
+        cinta.precalentar();
+        cinta.encenderMotor();
+        cinta.moverCinta();
+    }
+}
 ```
 ##### Invoker
 ```java
-    public class TableroControl{
-        private Comando c;
+public class TableroControl{
+    private Comando c;
         
-        public TableroControl(){}
-        
-        public void setComando(Comando c){
-            this.c = c;
-        }
-        public void run(){
-            c.ejecutar();
-        }
+    public TableroControl(){}
+       
+    public void setComando(Comando c){
+        this.c = c;
     }
+    public void run(){
+        c.ejecutar();
+    }
+}
 ```
 
 #### Client
 De esta manera, el operario solo deberá acceder al tablero de control y presionar el botón para encender la cinta transportadora:
 
 ```java
-   public class operario{
-      public static void main(String[]args){
-           TableroControl tablero = new TableroControl(); //invoker
-           CintaTransportadora cinta = new CintaTransportadora(); //creo un objeto de una de las cintas transportadoras
-           EncenderCintaTransportadora encender = new EncenderCintaTransportadora(cinta);
-           tablero.setComando(encender);
-           tablero.ejecutar(); //enciendo la cinta transportadora;
-       }
-   } 
+public class operario{
+   public static void main(String[]args){
+        TableroControl tablero = new TableroControl(); //invoker
+        CintaTransportadora cinta = new CintaTransportadora(); //creo un objeto de una de las cintas transportadoras
+        EncenderCintaTransportadora encender = new EncenderCintaTransportadora(cinta);
+        tablero.setComando(encender);
+        tablero.ejecutar(); //enciendo la cinta transportadora;
+   }
+} 
 ```
 

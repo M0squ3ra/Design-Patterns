@@ -70,32 +70,32 @@ Esto puede resultar un poco complejo para tan solo poder realizar dos actividade
 Para utilizarlo, debemos implementar una fachada que nos permita abstraer los sub sistemas:
 #### Facade
 ```java
-    public class Facade{
-        public Facade(){...}
-        public void verPerfil(Usuario u){
-            Perfil p = u.getPerfil();
-            List<Publicacion> publicaciones = p.getPublicaciones();
-            for(Publicacion i : publicaciones){
-                i.mostrarPublicacion();
-            }
-        }
-        public void realizarPublicacion(Usuario yo){
-            Publicacion publicacion = new Publicacion();
-            Validador v = new Validador();
-            if(v.validarPublicacion(Publicacion)){
-                Perfil miPerfil = yo.getPerfil();
-                miPerfil.addPublicacion(publicacion);
-            }
+public class Facade{
+    public Facade(){...}
+    public void verPerfil(Usuario u){
+        Perfil p = u.getPerfil();
+        List<Publicacion> publicaciones = p.getPublicaciones();
+        for(Publicacion i : publicaciones){
+            i.mostrarPublicacion();
         }
     }
+    public void realizarPublicacion(Usuario yo){
+        Publicacion publicacion = new Publicacion();
+        Validador v = new Validador();
+        if(v.validarPublicacion(Publicacion)){
+            Perfil miPerfil = yo.getPerfil();
+            miPerfil.addPublicacion(publicacion);
+        }
+    }
+}
 ```
 De esta manera, para realizar las actividades bastaría con:
 ```java
-    public class Main{
-        public static void main(String[] args){
-            Facade fachada = new Facade();
-            fachada.verPerfil(pedro);
-            fachada.realizarPublicacion(yo);
-        }
+public class Main{
+    public static void main(String[] args){
+        Facade fachada = new Facade();
+        fachada.verPerfil(pedro);
+        fachada.realizarPublicacion(yo);
     }
+}
 ```

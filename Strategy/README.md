@@ -10,32 +10,32 @@ Supongamos que tenemos una aplicación que permite a los usuarios crear notas pa
 
 ##### Strategy
 ```java
-   public interface Ordenamiento{
-       public void ordenar(Lista);
-   }
+public interface Ordenamiento{
+    public void ordenar(Lista);
+}
 ```
 ##### Estrategias
 ```java
-    public class Nombre implements Ordenamiento{
-        public void ordenar(Lista){...} //ordena la lista por nombre
-    }
+public class Nombre implements Ordenamiento{
+    public void ordenar(Lista){...} //ordena la lista por nombre
+}
 ```
 ```java
-    public class Fecha implements Ordenamiento{
-        public void ordenar(Lista){...} //ordena la lista por fecha
-    }
+public class Fecha implements Ordenamiento{
+    public void ordenar(Lista){...} //ordena la lista por fecha
+}
 ```
 ##### Contexto
 ```java
-    public class OrdenarNotas{
-        private Ordenamiento ord;
-        public Notas(Ordenamiento ord){
-            this.ord = ord;
-        }
-        public void ordenarNotas(Lista notas){
-            return ord.ordenar(notas);
-        }
+public class OrdenarNotas{
+    private Ordenamiento ord;
+    public Notas(Ordenamiento ord){
+        this.ord = ord;
     }
+    public void ordenarNotas(Lista notas){
+        return ord.ordenar(notas);
+    }
+}
 ```
 De esta manera ya tenemos las notas ordenadas sin la necesidad de tener dos clases diferentes para ordenar notas (una por cada tipo de ordenamiento), logrando asi que el código sea mucho mas limpio. Si en un futuro el creador de la app decidiera agregar otro método de ordenamiento, tan solo debería crear otra estrategia que implemente la interfaz Ordenamiento.
 
