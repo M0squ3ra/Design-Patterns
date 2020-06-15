@@ -32,3 +32,8 @@ El fin de este tipo de patrones es gestionar algoritmos, relaciones y responsabi
 
 [Strategy]:https://github.com/M0squ3ra/Design-Patterns/tree/master/Strategy
 - [Strategy]
+
+[Chain-of-Responsability]:https://github.com/M0squ3ra/Design-Patterns/blob/master/Chain-of-Responsability
+- [Chain-of-Responsability]
+
+
