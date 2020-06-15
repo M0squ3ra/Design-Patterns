@@ -1,5 +1,5 @@
 # Composite
-El patrón Composite (Compuesto) te permite componer objetos en estructuras tipo árbol para representar jerarquías de parte completa. Composite le permite a los clientes tratar objetos y composiciones de objetos de una manera uniforme.
+El patrón Composite (Compuesto) permite componer objetos en estructuras tipo árbol para representar jerarquías de parte completa. Composite le permite a los clientes tratar objetos y composiciones de objetos de una manera uniforme.
 
 ![CompositeUML](Composite.png)
 
