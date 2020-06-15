@@ -1,15 +1,16 @@
 # Chain of Responsibility
-El patron Chain of Responsibility (Cadena de Responsabilidad), te permite crear una cadena de objetos que examinan una peticio. Cada objeto de la cadena examina la solicitud y decide si la maneja o la pasa al siguiente objeto en la cadena.
-El patron se usa cuando varios objetos pueden manejar cierta petición, y el manejador no se conoce a priori, sino que debería determinarse automáticamente.
+El patrón Chain of Responsibility (Cadena de Responsabilidad), te permite crear una cadena de objetos que examinan una peticio. Cada objeto de la cadena examina la solicitud y decide si la maneja o la pasa al siguiente objeto en la cadena.
+El patrón se usa cuando varios objetos pueden manejar cierta petición, y el manejador no se conoce a priori, sino que debería determinarse automáticamente.
 
 ![ChainOfResponsibilityUML](ChainOfResponsibility.png)
 
 ## Ejemplo
 
 Supongamos que tenemos una linea de produccion de autos donde si bien se fabrica el mismo modelo de auto, se ofrecen tres versiones:
- - 1 - Base: Tiene todas las partes esenciales pero ningun agregado premium
- - 2 - Semi-premium: Tiene GPS y y un motor mas potente
- - 3 - Premium: Tiene GPS, motor mas potente e interior de cuero
+ - 1 - Base: Tiene todas las partes esenciales pero ningún agregado premium
+ - 2 - Semi-premium: Tiene GPS y un motor más potente
+ - 3 - Premium: Tiene GPS, motor más potente e interior de cuero
+
 
 La clase Auto y sus hijos se definen de la siguiente manera:
 
@@ -42,7 +43,7 @@ public class Premium extends Auto{
     }
 }
 ```
-Para diseñar el sistema con el patron de diseño Chain of Responsability, deberemos implementar los manejadores (Handlers) de la futura cadena:
+Para diseñar el sistema con el patrón de diseño Chain of Responsability, deberemos implementar los manejadores (Handlers) de la futura cadena:
 
 ![AutoUML](Auto.png)
 
@@ -100,7 +101,7 @@ public class HandlerAutoPremium extends HandlerAuto{
     
 }
 ```
-Ahora lo unico que queda es ensamblar la cadena:
+Ahora lo único que queda es ensamblar la cadena:
 ```java
 public class Main{
     public static void main(String[] args){
