@@ -103,7 +103,7 @@ public class HandlerAutoPremium extends HandlerAuto{
 ```
 Ahora lo único que queda es ensamblar la cadena:
 ```java
-public class Main{
+public class Client{
     public static void main(String[] args){
         //declaramos los objetos de la cadena
         HandlerAutoBase hb = new HandlerAutoBase();
