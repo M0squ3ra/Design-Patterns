@@ -26,17 +26,17 @@ Esto ocasiona que existan dos teclados para el mismo juego, situación ilógica 
 Quedando la clase Teclado de la siguiente manera:
 ```java
 public class Teclado{
-    private Teclado miTeclado;
+    private static Teclado miTeclado;
     private Teclado(){ //constructor privado
         mapearTeclado();
     } 
     private mapearTeclado(){...}
        
     public static Teclado getTeclado(){
-        if(this.miTeclado == null){
-            this.miTeclado = new Teclado();
+        if(miTeclado == null){
+            miTeclado = new Teclado();
         }
-        return this.miTeclado
+        return miTeclado
     }
 }
 ```
